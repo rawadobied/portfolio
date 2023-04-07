@@ -1,0 +1,21 @@
+.cta{
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 5rem;
+
+}
+.socialMedia{
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  position: relative;
+  align-items: center;
+  &:after{
+    content: '';
+    height: 5rem;
+    width: 1px;
+    background-color: var(--color-primary);
+
+  }
+}

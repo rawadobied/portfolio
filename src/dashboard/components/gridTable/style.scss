@@ -1,0 +1,90 @@
+.gridTableContainer {
+  flex: 1;
+  //aspect-ratio: 1/1;
+  //background-color: white;
+  min-width:min-content;
+  max-height: 350px;
+  border-radius: unset;
+  position: relative;
+  padding: 0;
+  overflow: scroll;
+
+  .gridTableTitle {
+    position: sticky;
+    //text-align: center;
+    //transform: translate(-50%,-50%);
+    background-color: var(--color-primary);
+    top: 0;
+    //top: 0;
+  }
+
+  .gridTableItems {
+    display: flex;
+    //padding: 2rem;
+    flex-direction: column;
+    //gap: 1.2rem;
+    .avatar {
+      width: 30px;
+      aspect-ratio: 1/1;
+      //background-color: #888888;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+}
+.girdTableItem {
+  display: flex;
+  justify-content: space-between;
+  //color: black;
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  >div{
+    flex:1;
+  }
+}
+
+.gridTableHeader {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+}
+
+.stars {
+  color: var(--color-bg);
+  font-size: 1.2rem;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.gridTableContainer::-webkit-scrollbar-track {
+  background: #888;
+
+}
+
+/* Handle */
+.gridTableContainer::-webkit-scrollbar-thumb {
+  background: var(--color-bg);
+}
+
+/* Handle on hover */
+.gridTableContainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+/*_____________________MEDIA QUERIES (MEDIUM DEVICES)__________________________________*/
+@media only screen and(max-width: 1024px ) {
+
+}
+
+/*_____________________MEDIA QUERIES (SMALL DEVICES)__________________________________*/
+@media only screen and(max-width: 600px ) {
+.gridTableContainer{
+  min-width: 100%;
+}
+}

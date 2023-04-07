@@ -1,0 +1,21 @@
+.chartWrapper{
+  //width: 300px;
+  //height: 500px;
+  //aspect-ratio: 5/6;
+  position: relative;
+}
+.firstLine{
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-bg);
+  position: relative;
+  border-radius: 0 5px 5px 0;
+  .progressLine{
+    width: 80%;
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: 0 5px 5px 0;
+    position: absolute;
+    //box-shadow: -1px 0px 5px 0px rgba(0,0,0,0.2)
+  }
+}

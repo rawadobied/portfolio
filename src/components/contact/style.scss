@@ -1,0 +1,43 @@
+.contactsDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.contactsItems {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  //flex: 1;
+  //justify-content: space-around;
+  //align-items: flex-end;
+  align-items: stretch;
+}
+
+.contactForm {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/*_____________________MEDIA QUERIES (MEDIUM DEVICES)__________________________________*/
+@media screen and(max-width: 1024px) {
+  .contactsDetails {
+    //flex-direction: column;
+  }
+  .formInput {
+    margin: 1rem 0;
+  }
+  .contactsItems {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/*_____________________MEDIA QUERIES (SMALL DEVICES)__________________________________*/
+@media screen and(max-width: 600px) {
+
+}

@@ -1,0 +1,89 @@
+.aboutContainer {
+  display: grid;
+  grid-template-columns: 35% 50%;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.aboutImg{
+  width: unset;
+  aspect-ratio: 1/1;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  border-radius: unset;
+  overflow: hidden;
+  background-color: unset;
+}
+.aboutMe {
+  //width: 100%;
+  //aspect-ratio: 1/1;
+  border-radius: 2rem;
+  background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
+  overflow: hidden;
+
+  img {
+    //transform: rotate(10deg);
+    border-radius: 2rem;
+    //overflow: hidden;
+    object-fit: contain;
+    transition: all 400ms ease-in-out;
+    transform: scale(1.8);
+    //background-color: var(--color-bg-variant);
+  }
+
+}
+
+.aboutContent {
+  //display: flex;
+  //gap: 0.7rem;
+  //align-items: center;
+
+  //justify-content: center;
+  overflow: hidden;
+  p {
+    margin: 2rem 0 2.6rem;
+    color: var(--color-light);
+  }
+}
+
+.cardWrapper {
+  display: flex;
+  width: 100%;
+  gap: 0.7rem;
+  overflow-x: scroll;
+  scroll-behavior: auto;
+
+}
+
+/*_____________________MEDIA QUERIES (MEDIUM DEVICES)__________________________________*/
+@media screen and(max-width: 1024px) {
+  .container{
+    width: var(--container-width-md);
+  }
+
+  .aboutContainer {
+    grid-template-columns: 1fr;
+    p {
+
+    }
+  }
+  .aboutMe {
+    width: 50%;
+    margin: 2rem auto 4rem;
+  }
+
+}
+
+/*_____________________MEDIA QUERIES (SMALL DEVICES)__________________________________*/
+@media screen and(max-width: 600px) {
+  .container{
+    width: var(--container-width-sm);
+  }
+  .aboutMe {
+    width: 80%;
+    //margin: 2rem auto 4rem;
+  }
+
+
+}

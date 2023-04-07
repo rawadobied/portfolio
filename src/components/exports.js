@@ -1,0 +1,11 @@
+export {default as Home} from '../components/Home';
+export {default as Contacts} from './contact/contacts';
+export {default as Projects} from './projects/projects';
+export {default as Navbar} from '../components/navbar';
+export {default as About} from '../components/aboutme/about';
+export {default as Experience} from '../components/experience/experience';
+export {default as Services} from '../components/services/services';
+export {default as Portfolio} from '../components/portfolio/portfolio';
+export {default as LinearIndeterminate} from '../components/loader/loader';
+export {default as RatingComponent} from '../components/ratingComponent/ratingComponent';
+export {default as PdfViewer} from '../components/pdfViewer/pdfViewer';

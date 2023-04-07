@@ -1,0 +1,31 @@
+.experienceContainer {
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  //flex-wrap: wrap;
+  //height: 500px;
+  justify-items: stretch;
+
+   .experience{
+    //flex: 1;
+     display: flex;
+     flex-basis: 50%;
+     //align-items: stretch;
+     align-self: stretch;
+    align-content: stretch;
+
+     //justify-self: stretch;
+    justify-content: stretch;
+
+  }
+}
+
+@media only screen and(max-width: 1024px) {
+  .experienceContainer {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+}

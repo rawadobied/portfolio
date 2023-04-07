@@ -1,0 +1,20 @@
+.statisticsContainer{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.StatisticsSection{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.detailsContainer{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem;
+  //justify-content: space-between;
+}

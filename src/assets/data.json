@@ -1,0 +1,157 @@
+{
+  "name": "Rawad",
+  "subtitle": "Full stack Developer",
+  "aboutMeSection": [
+    {
+      "aboutme": "I'm a full-stack web developer with a passion for creating beautiful and functional websites. I have several years of experience in both front-end and back-end development, and I'm always eager to learn and try new technologies.\n\nMy skills in HTML, CSS, JavaScript,Php and various web frameworks allow me to design and develop websites that are user-friendly and visually appealing. I'm also good in databases, APIs, and server-side programming, which enables me to build complex web applications that meet specific business needs.\n\nI'm a strong communicator. I'm able to work effectively with both technical and non-technical team members to ensure that projects are completed on time and to the highest quality standards.\n\nI'm passionate about helping businesses achieve their goals through cutting-edge technology.",
+      "prevExpe": [
+        {
+          "title": "Server Side",
+          "subtitle": "3+ years Working"
+        },
+        {
+          "title": "Server Side",
+          "subtitle": "3+ years Working"
+        },
+        {
+          "title": "Server Side",
+          "subtitle": "3+ years Working"
+        }
+      ]
+    }
+  ],
+  "myExperienceSection": [
+    {
+      "name": "FrontEnd Developer",
+      "data": [
+        {
+          "title": "HTML",
+          "level": "comfortable"
+        },
+        {
+          "title": "CSS",
+          "level": "comfortable"
+        },
+        {
+          "title": "JavaScript",
+          "level": "comfortable"
+        },
+        {
+          "title": "Bootstrap",
+          "level": "comfortable"
+        },
+        {
+          "title": "React",
+          "level": "comfortable"
+        },
+        {
+          "title": "TypeScript",
+          "level": "comfortable"
+        }
+      ]
+    },
+    {
+      "name": "BackEnd Developer",
+      "data": [
+        {
+          "title": "MySql",
+          "level": "comfortable"
+        },
+        {
+          "title": "Kali Linux",
+          "level": "comfortable"
+        },
+        {
+          "title": "Laravel",
+          "level": "comfortable"
+        }
+      ]
+    }
+  ],
+  "previousJobsSection": [
+    {
+      "jobPosition": "FullStuck Web Developer",
+      "workPlace": "Freelancer",
+      "country": "Iraq-Erbil",
+      "period": "April 2021 - April 2022",
+      "website": ""
+    },
+    {
+      "jobPosition": "IT Manager",
+      "workPlace": "Best Western Plus Erbil Hotel",
+      "country": "Iraq-Erbil",
+      "period": "March 2018 - April 2021",
+      "website": ""
+    },
+    {
+      "jobPosition": "Team leader",
+      "workPlace": "UNICEF",
+      "country": "Lebanon",
+      "period": "January 2018 - June 2018",
+      "website": ""
+    },
+    {
+      "jobPosition": "Technical Support",
+      "workPlace": "Real Word For Technology",
+      "country": "Iraq-Erbil",
+      "period": "April 2021 - April 2022",
+      "website": ""
+    },
+    {
+      "jobPosition": "IT Manager",
+      "workPlace": "Sipan Hotel",
+      "country": "Iraq-Erbil",
+      "period": "April 2021 - April 2022",
+      "website": ""
+    },
+    {
+      "jobPosition": "Receptionist",
+      "workPlace": "Hyksos Hotel",
+      "country": "Iraq-Erbil",
+      "period": "June 2018 - October 2018",
+      "website": ""
+    },
+    {
+      "jobPosition": "IT Manager",
+      "workPlace": "Sheraton Ma'aret Sednaya Hotel",
+      "country": "Damascus",
+      "period": "January 2015 - May 2017",
+      "website": ""
+    }
+  ],
+  "myProjects":[
+    {
+      "title": "Sipan Hotel",
+      "details": "A front end static website for hotel I was working as an IT Manager at, \\n' +\n      'it was the first published project of mine ,",
+      "img": "sipan-menu.png",
+      "liveView": "https://www.sipanhotels.com",
+      "code": "https://github.com/rawadobied/sipan-hotel",
+      "techUsed": ["React js", "Scss", "css", "html"]
+    },
+    {
+      "title": "Golden Mountains",
+      "details": "A front end static website for hotel I was working as an IT Manager at, \\n' +\n      'it was the first published project of mine ,",
+      "img": "sipan.png",
+      "liveView": "https://goldenmountains.net",
+      "code": "https://github.com/rawadobied/golden",
+      "techUsed": ["React", "Scss"]
+    },
+    {
+      "title": "Sipan Qr Menu",
+      "details": "A front end static website for hotel I was working as an IT Manager at, \\n' +\n      'it was the first published project of mine ,",
+      "img": "sipan-menu-site.png",
+      "liveView": "https://menu.sipanhotels.com",
+      "dashboard":"https://menu.sipanhotels.com/dashboard",
+      "code": "https://github.com/rawadobied/golden",
+      "techUsed": ["React", "Scss"]
+    },
+    {
+      "title": "Golden Mountains",
+      "details": "A front end static website for hotel I was working as an IT Manager at, \\n' +\n      'it was the first published project of mine ,",
+      "img": "golden.png",
+      "liveView": "https://view.goldenmountains.net",
+      "code": "https://github.com/rawadobied/golden",
+      "techUsed": ["React", "Scss"]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+.statisticsCard {
+  position: relative;
+  //width: 100%;
+  .spotLight{
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-primary);
+    box-shadow: 0px 1px 3px #07111a;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+  }
+  .cardHeader {
+    display: flex;
+    flex-direction: column;
+  }
+  .cardWrapper {
+    width: 100%;
+  }
+  .subTitle {
+    color: var(--color-bg);
+    font-family:'Poppins ExtraBold';
+  }
+  .cardContent {
+    padding: 1rem;
+    //background-color: white;
+    //min-width: 250px !important;
+    //background-color: white;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    //justify-content: center;
+  }
+
+  .cardDetails {
+    background-color: var(--color-primary);
+    padding: 0.3em;
+    color: var(--color-white);
+  }
+}

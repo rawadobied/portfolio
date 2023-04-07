@@ -1,0 +1,40 @@
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  //min-width: ;
+  //max-width: 300px;
+  padding:1.5rem;
+  //flex: 0 0 33.333%;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  background: var(--color-bg-variant);
+  text-align: center;
+  transition: var(--transition);
+  user-select: none;
+  align-self: normal;
+  overflow: hidden;
+  small {
+    font-size: 0.7rem;
+    //color: var(--color-light);
+    user-select: none;
+  }
+
+  &:hover {
+    background-color: transparent;
+    border-color: var(--color-primary-variant);
+  }
+}
+
+.cardIcon {
+  //font-size: 2.4rem;
+  color: var(--color-primary);
+  //margin-bottom: 1rem;
+}
+.email{
+  text-overflow: ellipsis !important;
+  overflow: hidden;
+  max-width: 100%;
+  white-space: nowrap;
+
+}

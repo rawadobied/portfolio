@@ -1,0 +1,11 @@
+.ratingComponentContainer{
+  //position: absolute;
+  background-color: unset;
+  width: max-content;
+  max-width: 250px;
+  .ratingComponentWrapper{
+    padding: 2rem;
+    width: 100%;
+  }
+
+}
