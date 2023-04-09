@@ -2,6 +2,7 @@ import './style.scss'
 import {Link} from 'react-router-dom'
 import {BsCodeSlash} from 'react-icons/bs'
 import {LazyLoad} from "../../helpsExports";
+import {_sendClick} from "../../../globalContext/serverConfig/axiosApi";
 
 const colors = ['07FAA4', '05C2E3', 'EEF025']
 
@@ -23,7 +24,7 @@ const ProjectCard = (props) => {
                     <div className={'d-flex flex-wrap mt-3'}>
                         {
                             data?.techUsed.map(e => <small className={'p-2 shadow-sm rounded-1 m-2'} key={e} style={{
-                                border:`1px solid #${colors[(Math.floor(Math.random()*colors.length))]}`
+                                border: `1px solid #${colors[(Math.floor(Math.random() * colors.length))]}`
                             }}>{e}</small>)
                         }
                     </div>
@@ -46,15 +47,24 @@ const ProjectCard = (props) => {
             </div>
             <div className="d-flex w-100 justify-content-center gap-4 mt-4">
                 <Link to={data?.liveView} target="_blank">
-                    <button className={'btn btn-primary'}>Live</button>
+                    <button className={'btn btn-primary'}
+                            onClick={() => _sendClick({type: `live_${data?.title}`})}
+                    >Live
+                    </button>
                 </Link>
                 <Link to={data?.code} target="_blank">
-                    <button className={'btn d-flex align-items-center'}><BsCodeSlash/>Code</button>
+                    <button className={'btn d-flex align-items-center'}
+                            onClick={() => _sendClick({type: `code_${data?.title}`})}
+                    ><BsCodeSlash/>Code
+                    </button>
                 </Link>
                 {
                     data.dashboard &&
                     <Link to={data?.dashboard} target="_blank">
-                        <button className={'btn btn-primary'}>Dashboard</button>
+                        <button className={'btn btn-primary'}
+                                onClick={() => _sendClick({type: `dashboard_${data?.title}`})}
+                        >Dashboard
+                        </button>
                     </Link>
 
                 }

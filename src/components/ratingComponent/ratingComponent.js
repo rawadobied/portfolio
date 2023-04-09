@@ -3,6 +3,7 @@ import './style.scss'
 import {Rating} from "../helpsExports";
 import {MyTextField} from "../../dashboard/dashbordExports";
 import {GetFromContext} from "../../globalContext/helperFunction";
+import {_sendClick} from "../../globalContext/serverConfig/axiosApi";
 
 const RatingComponent = (props) => {
     const [rateDetails, setRateDetails] = useState({name: '', comment: '', rate: ''})
@@ -36,11 +37,10 @@ const RatingComponent = (props) => {
                                  placeholder={rateContext?.comment || 'comment'} onChange={(e) => handleChange(e)}/>
                 </form>
             </div>
+
             <button className={'btn btn-primary'} onClick={() => {
-                (!rateContext & !rateDetails.comment =='') && setRateToContext(rateDetails)
-                 rateForm?.current.reset()
-
-
+                (!rateContext & !rateDetails.comment == '') ? setRateToContext(rateDetails):alert('no')
+                rateForm?.current.reset()
             }
             } disabled={rateContext ? true : false}> {rateContext ? 'Thank you for rating' : 'submit'}</button>
         </div>

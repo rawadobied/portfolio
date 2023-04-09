@@ -5,6 +5,7 @@ import './style.scss'
 import {AiOutlineHome, AiOutlineUser,} from 'react-icons/ai'
 import {BiBook} from 'react-icons/bi'
 import {RiServiceFill} from 'react-icons/ri'
+import {_sendClick} from "../../globalContext/serverConfig/axiosApi";
 
 const Navbar = (props) => {
         const [activeNave, setActiveNav] = useState('home')
@@ -34,17 +35,20 @@ const Navbar = (props) => {
             <nav className="" ref={navRef}>
                 <a title={'Home'} href="#home" name={'home'} className={activeNave === 'home' ? 'active' : ''}
                    onClick={(event) => {
-                       // setActiveNav(event.target.name)
+                       _sendClick({type:'home'})
                    }}><AiOutlineHome/></a>
-                <a title={'About'} name={'about'} href="#about" className={activeNave === 'about' ? 'active' : ''}>
+                <a title={'About'} name={'about'} href="#about"
+                   onClick={()=> _sendClick({type:'About'})}
+                   className={activeNave === 'about' ? 'active' : ''}>
                     <AiOutlineUser/></a>
                 <a title={'Experience'} name={'experience'} href="#experience"
                    className={activeNave === 'experience' ? 'active' : ''}
+                   onClick={()=> _sendClick({type:'Experience'})}
                 ><BiBook/></a>
                 <a title={'Contacts'} name={'contacts'} href="#contacts"
                    className={activeNave === 'contacts' ? 'active' : ''}
+                   onClick={()=> _sendClick({type:'contacts'})}
                 ><RiServiceFill/></a>
-
             </nav>
         )
     }

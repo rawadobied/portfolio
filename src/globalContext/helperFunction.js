@@ -57,33 +57,6 @@ export function encryptName(name) {
     return newName
 }
 
-// export function getBrowserName() {
-//     const isOpera = (!!window.opr && !! opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-//
-// // Firefox 1.0+
-//     const isFirefox = typeof InstallTrigger !== 'undefined';
-//
-// // Safari 3.0+ "[object HTMLElementConstructor]"
-//     const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) {
-//         return p.toString() === "[object SafariRemoteNotification]";
-//     })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
-//
-// // Internet Explorer 6-11
-//     const isIE = /*@cc_on!@*/false || !!document.documentMode;
-//
-// // Edge 20+
-//     const isEdge = !isIE && !!window.StyleMedia;
-//
-// // Chrome 1 - 71
-//     const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-//
-// // Blink engine detection
-//     const isBlink = (isChrome || isOpera) && !!window.CSS;
-//
-//     return {isEdge, isIE, isChrome, isSafari, isFirefox,isBlink}
-// }
-
-
 export const getClientInfo = () => {
 
     var unknown = '-';
@@ -106,43 +79,43 @@ export const getClientInfo = () => {
     var nameOffset, verOffset, ix;
 
     // Opera
-    if ((verOffset = nAgt.indexOf('Opera')) != -1) {
+    if ((verOffset = nAgt.indexOf('Opera')) !== -1) {
         browser = 'Opera';
         version = nAgt.substring(verOffset + 6);
-        if ((verOffset = nAgt.indexOf('Version')) != -1) {
+        if ((verOffset = nAgt.indexOf('Version')) !== -1) {
             version = nAgt.substring(verOffset + 8);
         }
     }
     // Opera Next
-    if ((verOffset = nAgt.indexOf('OPR')) != -1) {
+    if ((verOffset = nAgt.indexOf('OPR')) !== -1) {
         browser = 'Opera';
         version = nAgt.substring(verOffset + 4);
     }
     // Legacy Edge
-    else if ((verOffset = nAgt.indexOf('Edge')) != -1) {
+    else if ((verOffset = nAgt.indexOf('Edge')) !== -1) {
         browser = 'Microsoft Legacy Edge';
         version = nAgt.substring(verOffset + 5);
     }
     // Edge (Chromium)
-    else if ((verOffset = nAgt.indexOf('Edg')) != -1) {
+    else if ((verOffset = nAgt.indexOf('Edg')) !== -1) {
         browser = 'Microsoft Edge';
         version = nAgt.substring(verOffset + 4);
     }
     // MSIE
-    else if ((verOffset = nAgt.indexOf('MSIE')) != -1) {
+    else if ((verOffset = nAgt.indexOf('MSIE')) !== -1) {
         browser = 'Microsoft Internet Explorer';
         version = nAgt.substring(verOffset + 5);
     }
     // Chrome
-    else if ((verOffset = nAgt.indexOf('Chrome')) != -1) {
+    else if ((verOffset = nAgt.indexOf('Chrome')) !== -1) {
         browser = 'Chrome';
         version = nAgt.substring(verOffset + 7);
     }
     // Safari
-    else if ((verOffset = nAgt.indexOf('Safari')) != -1) {
+    else if ((verOffset = nAgt.indexOf('Safari')) !== -1) {
         browser = 'Safari';
         version = nAgt.substring(verOffset + 7);
-        if ((verOffset = nAgt.indexOf('Version')) != -1) {
+        if ((verOffset = nAgt.indexOf('Version')) !== -1) {
             version = nAgt.substring(verOffset + 8);
         }
     }
@@ -152,7 +125,7 @@ export const getClientInfo = () => {
         version = nAgt.substring(verOffset + 8);
     }
     // MSIE 11+
-    else if (nAgt.indexOf('Trident/') != -1) {
+    else if (nAgt.indexOf('Trident/') !== -1) {
         browser = 'Microsoft Internet Explorer';
         version = nAgt.substring(nAgt.indexOf('rv:') + 3);
     }
@@ -165,9 +138,9 @@ export const getClientInfo = () => {
         }
     }
     // trim the version string
-    if ((ix = version.indexOf(';')) != -1) version = version.substring(0, ix);
-    if ((ix = version.indexOf(' ')) != -1) version = version.substring(0, ix);
-    if ((ix = version.indexOf(')')) != -1) version = version.substring(0, ix);
+    if ((ix = version.indexOf(';')) !== -1) version = version.substring(0, ix);
+    if ((ix = version.indexOf(' ')) !== -1) version = version.substring(0, ix);
+    if ((ix = version.indexOf(')')) !== -1) version = version.substring(0, ix);
 
     majorVersion = parseInt('' + version, 10);
     if (isNaN(majorVersion)) {
@@ -183,7 +156,7 @@ export const getClientInfo = () => {
 
     if (typeof navigator.cookieEnabled == 'undefined' && !cookieEnabled) {
         document.cookie = 'testcookie';
-        cookieEnabled = (document.cookie.indexOf('testcookie') != -1) ? true : false;
+        cookieEnabled = (document.cookie.indexOf('testcookie') !== -1) ? true : false;
     }
 
     // system
@@ -258,15 +231,15 @@ export const getClientInfo = () => {
     }
 }
 export const getBrowserName = () => {
-    if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
+    if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) !== -1) {
         return ('Opera');
-    } else if (navigator.userAgent.indexOf("Chrome") != -1) {
+    } else if (navigator.userAgent.indexOf("Chrome") !== -1) {
         return ('Chrome');
-    } else if (navigator.userAgent.indexOf("Safari") != -1) {
+    } else if (navigator.userAgent.indexOf("Safari") !== -1) {
         return ('Safari');
-    } else if (navigator.userAgent.indexOf("Firefox") != -1) {
+    } else if (navigator.userAgent.indexOf("Firefox") !== -1) {
         return ('Firefox');
-    } else if ((navigator.userAgent.indexOf("MSIE") != -1) || (!!document.documentMode == true)) //IF IE > 10
+    } else if ((navigator.userAgent.indexOf("MSIE") !== -1) || (!!document.documentMode == true)) //IF IE > 10
     {
         return ('IE');
     } else {

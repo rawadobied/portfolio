@@ -1,9 +1,16 @@
 import React, {
-    createContext, useEffect, useState
+    createContext, useEffect, useRef, useState
 } from "react";
 import data from '../assets/data.json'
-import {_setAboutMeWorking, _setMyExperience, _setRate, _setVisitor, _setVisitorName} from "./serverConfig/axiosApi";
-import {setCookie, getCookie, getBrowserName} from './helperFunction'
+import {
+    _sendClick,
+    _setAboutMeWorking,
+    _setMyExperience,
+    _setRate,
+    _setVisitor,
+    _setVisitorName
+} from "./serverConfig/axiosApi";
+import {setCookie, getCookie, getBrowserName, getClientInfo} from './helperFunction'
 
 
 export const GlobalContext = createContext({})
@@ -26,6 +33,7 @@ export const MyGlobalContext = (props) => {
     // const [showWorkExperience, setShowWorkExperience] = useState(false)
     const [refresh, setRefresh] = useState(1)
     const [browser, setBrowser] = useState(null)
+    const mounted = useRef(true) // render one time
 
     useEffect(() => {
         let info = JSON.parse(getItemFromStorage('name')) || null
@@ -44,25 +52,35 @@ export const MyGlobalContext = (props) => {
         setCookiesAccept(cookiesAccepted)
     }, [refresh])
     useEffect(() => {
-        setBrowser(e => getBrowserName())
-        // const browserFingerPrint = window.cookie
-        // document.cookie = '<cookieName>=; Max-Age=0;secure'
-        async function fetchData() {
-            let fingerPrint = await getCookie('_cookie_accepted') // get finger Print from cookie
-            if (fingerPrint !== '') {
-                //cookie exist
-            } else {
-                let d = window.navigator
-                const id = (d.userAgent + d.vendor + d.appVersion + d.hardwareConcurrency + d.platform + d.userAgent).replace(/\D+/g, '')
-                //cookie not exist
-                _setVisitor(id).then(res => {
-                    setCookie('_cookie_accepted', true)
-                }).catch(e => console.log('this', e))
+        const x = () => {
+            mounted.current = false
+        }
+
+        if (mounted.current) {
+            setBrowser(e => getBrowserName())
+            // const browserFingerPrint = window.cookie
+            // document.cookie = '<cookieName>=; Max-Age=0;secure'
+            async function fetchData() {
+                let fingerPrint = await getCookie('_cookie_accepted') // get finger Print from cookie
+                if (fingerPrint !== '') {
+                    //cookie exist
+                } else {
+                    let d = window.navigator
+                    const id = (d.userAgent + d.vendor + d.appVersion + d.hardwareConcurrency + d.platform + d.userAgent).replace(/\D+/g, '')
+                    //cookie not exist
+                    _setVisitor(id, await getClientInfo()).then(res => {
+                        setCookie('_cookie_accepted', true)
+                    }).catch(e => console.log('this', e))
+                }
+
             }
+
+            fetchData()
 
         }
 
-        fetchData()
+
+        return () => x()
 
     }, [])
 
@@ -78,6 +96,7 @@ export const MyGlobalContext = (props) => {
     const setRateToContext = (v) => {
         setLoader(true)
         setRateContext(v)
+        _sendClick({type: 'rate'})
         let formData = new FormData();
         localStorage.setItem('rate', JSON.stringify(v))
         formData.append('name', v?.name || 'anonymous')

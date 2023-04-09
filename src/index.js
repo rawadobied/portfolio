@@ -1,10 +1,14 @@
+import "react-app-polyfill/ie9"
+import "react-app-polyfill/stable"
 import React from 'react';
+import {HelmetProvider} from "react-helmet-async";
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
 import {MyGlobalContext} from "./globalContext/globalContext";
+
 import * as serviceWorker from './serviceWorker'
-import {HelmetProvider} from "react-helmet-async";
+
 
 
 // ReactDOM.render(
@@ -19,7 +23,7 @@ import {HelmetProvider} from "react-helmet-async";
 // );
 
 
-ReactDOM.hydrateRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <BrowserRouter>
             <MyGlobalContext>
@@ -33,5 +37,5 @@ ReactDOM.hydrateRoot(document.getElementById('root')).render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 
-
-serviceWorker.register()
+//
+// serviceWorker.unregister()

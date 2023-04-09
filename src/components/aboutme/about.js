@@ -53,7 +53,7 @@ const About = (props) => {
                 <div className="aboutContent">
                     <p>
                         {aboutMe &&  Array.from(aboutMe?.split('\n').map(
-                            s=><span className={'m-2 d-block'}>{s}</span>
+                            (s,index)=><span className={'m-2 d-block'} key={index}>{s}</span>
                         ))}
                     </p>
                     <div className={'cardWrapper'} ref={scrollSideBar}>

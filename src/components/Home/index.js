@@ -3,6 +3,7 @@ import './style.scss'
 import {Cta, SocialMedia, LazyLoad} from '../helpsExports'
 
 import {GetFromContext, urlGet} from "../../globalContext/helperFunction";
+import {_sendClick} from "../../globalContext/serverConfig/axiosApi";
 
 
 const Home = (props) => {
@@ -30,7 +31,7 @@ const Home = (props) => {
             <div className="socialMedia-wrapper">
                 <SocialMedia/>
             </div>
-            <div className="checkLocation-wrapper">
+            <div className="checkLocation-wrapper" onClick={()=>_sendClick({type:'dashboard'})}>
                 <a href="/dashboard" target={'_blank'}>
                     <span className={'btn bg-info text-dark'}>You where me!</span>
                 </a>

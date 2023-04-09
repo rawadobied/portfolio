@@ -2,7 +2,7 @@ import './style.scss'
 import ReCAPTCHA from "react-google-recaptcha";
 import React, {useEffect, useRef, useState} from "react";
 import {MyTextarea, MyTextField} from "../../../dashboard/dashbordExports";
-import {_sendMessage, _getGoogleKey} from '../../../globalContext/serverConfig/axiosApi'
+import {_sendMessage, _getGoogleKey, _sendClick} from '../../../globalContext/serverConfig/axiosApi'
 import {GetFromContext} from "../../../globalContext/helperFunction";
 
 
@@ -13,21 +13,21 @@ const Form = (props) => {
     const [isTrusted, setIsTrusted] = useState(false)
     const [message, setMessage] = useState('')
     const [googleKey, setGoogleKey] = useState('')
+    const mounted = useRef(true)
 
     function submit(e) {
         e.preventDefault()
         if (isTrusted) {
             setLoader(true)
+            _sendClick({type: 'send message'})
             info != null && _sendMessage(info).then(res => {
                     setMessage(res.data.message)
-                    console.log(res.data.message)
                     setIsTrusted(false)
                     setInfo(null)
                 }
             ).catch(e => {
                 setMessage(e.response.data.message)
                 setIsTrusted(true)
-                console.log(e)
             }).finally(() => {
                     setLoader(false)
 
@@ -38,14 +38,17 @@ const Form = (props) => {
     }
 
     useEffect(() => {
-        _getGoogleKey().then(res => {
+        const x = () => {
+            mounted.current = false
+        }
+        mounted.current && _getGoogleKey().then(res => {
             setGoogleKey(res.data)
         })
         if (browser && !browser?.includes('Chrome')) {
             setIsTrusted(true)
 
         }
-
+        return () => x()
     }, [browser])
 
 
@@ -60,7 +63,7 @@ const Form = (props) => {
                              required onChange={(e) => pushInfo(e.target.value, 'name')}/>
                 <MyTextField type="Email" name={'email'} placeholder={'Email'} value={info?.email || ''}
                              required onChange={(e) => pushInfo(e.target.value, 'email')}/>
-                <MyTextarea name={'message'} className={'p-3'}  placeholder={'Message'}
+                <MyTextarea name={'message'} className={'p-3'} placeholder={'Message'}
                             value={info?.message || ''}
                             required onChange={(e) => pushInfo(e.target.value, 'message')}/>
                 {
