@@ -72,6 +72,7 @@ const InfoForm = (props) => {
         item[e.target.name] = e.target.value
         items[e.target.id] = item
         setAboutMeWorking(items)
+
     }
 
     const handleDelete = itemIndex => {
@@ -85,10 +86,6 @@ const InfoForm = (props) => {
     }, [refresh, disabled])
     return (
         <div className={'infoFormWrapper position-relative'}>
-            {/*<div className={'bg-danger w-100 vh-100 z-2 row p-5'}>*/}
-            {/*    /!*<Modal/>*!/*/}
-            {/*</div>*/}
-
             <div className={'infoFormContainer'}>
 
                 <h2>Update Home Page Information</h2>
@@ -96,16 +93,20 @@ const InfoForm = (props) => {
                     <form className={'infoFormItems'} onSubmit={(e) => handleSubmit(e)} ref={formData}>
                         <div className="infoFormItem">
                             <MyTextField label={'Name'} placeholder={name} focused
+                                         default={name}
                                          onChange={(event) => pushInfo(event.target.value, 'name')}
                                          inputProps={{maxLength: 20}} required />
                         </div>
                         <div className="infoFormItem">
-                            <MyTextField label={'subTitle'} placeholder={subtitle} focused
+                            <MyTextField label={'subTitle'} placeholder={subtitle}
+                                         default={subtitle}
+                                         focused
                                          onChange={(event) => pushInfo(event.target.value, 'subTitle')}
                                          inputProps={{maxLength: 20}} required/>
                         </div>
                         <div className="infoFormItem">
-                            <MyTextField id={'file'} label={'Image'} placeholder={'subtitle'} focused
+                            <MyTextField id={'file'} label={'Image'}
+                                         placeholder={'subtitle'} focused
                                          onChange={(e) => setFile(e)}
                                          type={'file'} inputProps={{accept: "image/png"}} inputRef={fileInputRef}
 
@@ -117,6 +118,8 @@ const InfoForm = (props) => {
                                 <div className="infoFormItem" style={{width: '100%'}}>
                                     <MyTextarea label={'About me'} placeholder={aboutMe}
                                                 style={{width: '100%'}}
+                                                default={aboutMe}
+                                                className={'p-3'}
                                                 onChange={(event) => pushInfo(event.target.value, 'aboutme')}
                                     />
                                 </div>

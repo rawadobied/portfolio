@@ -5,30 +5,7 @@ import {GetFromContext} from "../../globalContext/helperFunction";
 
 const SettingPage = (props) => {
     const navi = useNavigate()
-    const {setLoader, setRefresh, refresh} = GetFromContext()
-    const data = [
-        {
-            label: 'Home',
-            id: '1',
-            status: true
-        },
-        {
-            label: 'Expierence',
-            id: '2',
-            status: true
-        },
-        {
-            label: 'About Me',
-            id: '3',
-            status: false
-        },
-        {
-            label: 'Contact Me',
-            id: '4',
-            status: true
-        },
-
-    ]
+    const {setLoader, setRefresh, refresh,visibleComponents} = GetFromContext()
 
     function clearStorage() {
         setLoader(true)
@@ -53,14 +30,14 @@ const SettingPage = (props) => {
             <div className={'d-flex flex-column gap-4'}>
                 <h4>Check Buttons</h4>
                 <div className={'d-flex flex-wrap gap-1'}>
-                    <div className={'col-md-9 col-sm-12'}><SwitchButtons data={data}/></div>
+                    <div className={'col-md-9 col-sm-12'}><SwitchButtons data={visibleComponents && visibleComponents}/></div>
                 </div>
             </div>
             <div>
             </div>
-            <div className={'col-4'}>
+            <div className={'col-sm-12 col-md-6'}>
                 <label htmlFor={'resetBtn'}>this will reset all updates you have made!</label>
-                <button id={'resetBtn'} onClick={clearStorage} className={'btn'}>Reset Factory</button>
+                <button id={'resetBtn'} onClick={clearStorage} className={'btn m-1'}>Factory Reset</button>
             </div>
 
 

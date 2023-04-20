@@ -39,7 +39,7 @@ const RatingComponent = (props) => {
             </div>
 
             <button className={'btn btn-primary'} onClick={() => {
-                (!rateContext & !rateDetails.comment == '') ? setRateToContext(rateDetails):alert('no')
+                (!rateContext & !rateDetails.comment == '') && setRateToContext(rateDetails)
                 rateForm?.current.reset()
             }
             } disabled={rateContext ? true : false}> {rateContext ? 'Thank you for rating' : 'submit'}</button>

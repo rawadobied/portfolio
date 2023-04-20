@@ -1,12 +1,12 @@
 import React from 'react';
-import {Helmet} from 'react-helmet'
+import {Helmet} from 'react-helmet-async'
 
 const Seo = (props) => {
     return(
         <>
             <Helmet>
                 <meta property="og:site_name" content="Rawad Obied dashboard"/>
-                <meta property="og:title" content="dashboard"/>
+                <meta property="og:title" content="change my portfoilo content"/>
                 <meta property="og:image" itemProp="image" content="https://rawad.net/me.png"/>
                 <meta property="og:image:width" content="80"/>
                 <meta property="og:image:height" content="110"/>

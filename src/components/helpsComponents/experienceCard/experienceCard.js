@@ -11,8 +11,8 @@ const ExperienceCard = (props) => {
             <div className="experienceContent">
                 {
                     data?.map((d, index) =>
-                        <article className={'experienceDetails col-12 col-md-6'} key={index}>
-                            <div className="titleContainer mb-2">
+                        <article className={'experienceDetails p-md-4 p-3 col-12 col-md-6'} key={index}>
+                            <div className="titleContainer">
                                 <BsPatchCheckFill className={'bg-transparent'}/>
                                 <h5>{d?.title}</h5>
                             </div>

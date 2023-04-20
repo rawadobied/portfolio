@@ -8,7 +8,7 @@ const Projects = (props) => {
         <section id={'projects'}>
             <h5>Projects</h5>
             <h2>Previous Projects</h2>
-            <div className="container d-flex flex-wrap g-2 justify-content-center">
+            <div className="container-xxl d-flex flex-wrap justify-content-md-between">
                 {
                     data.myProjects?.map((e, index) =>
                         <ProjectCard data={e} key={index}/>

@@ -3,22 +3,39 @@ import {Link} from 'react-router-dom'
 import {BsCodeSlash} from 'react-icons/bs'
 import {LazyLoad} from "../../helpsExports";
 import {_sendClick} from "../../../globalContext/serverConfig/axiosApi";
+import {GetFromContext} from "../../../globalContext/helperFunction";
 
 const colors = ['07FAA4', '05C2E3', 'EEF025']
 
 const ProjectCard = (props) => {
     const data = props?.data
+    const {browser} = GetFromContext()
     return (
         <div className="col-12 col-md-5 m-1 border-danger border-2 shadow-lg">
-            {/*<h3>{props.title}</h3>*/}
             <div className="imagContainer">
                 <LazyLoad src={data?.img}/>
-                {/*<img className={''} src={require(`../../../assets/${data?.img}`)} alt=""/>*/}
-                {/*<div className="background"></div>*/}
             </div>
-            <div className="projectCardContent px-4">
+            <div className="projectCardContent">
                 <h5>{data?.title}</h5>
-                <small className={'font-italic --color-bg text-light'}>{data.details}</small>
+                {
+                    data?.visited &&
+                    <div className={'w-100 d-flex gap-1'}>
+                        <h6 className={'fst-italic my-1'}>{data?.visited}</h6><a href={`/${data?.visitingImg}`}>click her</a>
+                    </div>
+                }
+                <small className={'font-italic --color-bg text-light content'} id={data.title}>{data.details}</small>
+                <input type={'checkbox'} className={'expand-button'}
+                       onClick={async (e) => {
+                           if (browser.toLowerCase()!=='chrome'){
+                               let r = await document.getElementById(`${data.title}`) //readmore button is not working on fox
+                               if (e.target?.checked) {
+                                   r.classList.add('active')
+                               } else {
+                                   r.classList.remove('active')
+                               }
+                           }
+                       }}
+                />
                 <div className={'flex-column mt-2'}>
                     <h5>Tech used</h5>
                     <div className={'d-flex flex-wrap mt-3'}>
@@ -29,21 +46,6 @@ const ProjectCard = (props) => {
                         }
                     </div>
                 </div>
-
-                {/*{*/}
-                {/*    data?.map((d, index) =>*/}
-                {/*        <article className={'projectCardDetails'} key={index}>*/}
-
-                {/*            <div className="titleContainer">*/}
-                {/*                <Suspense fallback={<h1>Lo</h1>}>*/}
-                {/*                    <BsPatchCheckFill className={'titleIcon'}/>*/}
-                {/*                </Suspense>*/}
-                {/*                <h4>{d?.title}</h4>*/}
-                {/*            </div>*/}
-                {/*            <small className={'text-light'}><Chart percentage={d.level} title={d.level}/></small>*/}
-                {/*        </article>*/}
-                {/*    )*/}
-                {/*}*/}
             </div>
             <div className="d-flex w-100 justify-content-center gap-4 mt-4">
                 <Link to={data?.liveView} target="_blank">

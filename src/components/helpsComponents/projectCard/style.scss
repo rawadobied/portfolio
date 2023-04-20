@@ -21,6 +21,7 @@
   transition: all 1s ease-in-out;
 
 }
+
 .hover-effect {
   transition: all 1s ease-in-out;
 
@@ -70,6 +71,47 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
+}
+
+.content {
+  --max-lines: 2;
+  position: relative;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  overflow: hidden !important;
+  -webkit-line-clamp: var(--max-lines) !important;
+
+
+
+}
+.active{
+  -webkit-box-orient: unset !important;
+}
+.projectCardContent:has(.expand-button:checked) .content {
+  -webkit-box-orient: unset !important;
+}
+
+//.projectCardContent:has(.price) .content{
+//  -webkit-box-orient: unset !important;
+//
+//}
+
+.expand-button {
+  appearance: none;
+  display: block;
+  width: 100%;
+}
+
+.expand-button:before {
+  content: 'read more';
+  color: var(--color-primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.expand-button:checked:before {
+  content: 'read less';
 }
 
 

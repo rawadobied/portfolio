@@ -4,7 +4,6 @@ import AxiosInstance from "../axiosInstance";
 
 
 export async function _setVisitor(id,device) {
-
     const formData = new FormData()
     await formData.append('browserId', id.toString())
     await formData.append('device', JSON.stringify(device))
@@ -12,8 +11,8 @@ export async function _setVisitor(id,device) {
         headers: {
             // "Access-Control-Allow-Origin": "http://localhost:3000",
             // 'X-Requested-With': 'XMLHttpRequest',
-            'Access-Control-Allow-Credentials': true,
-            // 'Content-Type': 'multipart/form-data'
+            // 'Access-Control-Allow-Credentials': true,
+            'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
     })
@@ -23,7 +22,7 @@ export async function _setRate(data) {
         headers: {
             // "Access-Control-Allow-Origin": "http://localhost:3000",
             // 'X-Requested-With': 'XMLHttpRequest',
-            'Access-Control-Allow-Credentials': true,
+            // 'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -33,9 +32,9 @@ export async function _setRate(data) {
 export async function _getRates(data) {
     return await AxiosInstance.get(`${Serverpath.server}/api/getRates`, {
         headers: {
-            // "Access-Control-Allow-Origin": "http://localhost:3000",
+            // "Access-Control-Allow-Origin": "*",
             // 'X-Requested-With': 'XMLHttpRequest',
-            'Access-Control-Allow-Credentials': true,
+            // 'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -46,7 +45,7 @@ export async function _sendMessage(data) {
         headers: {
             // "Access-Control-Allow-Origin": "http://localhost:3000",
             // 'X-Requested-With': 'XMLHttpRequest',
-            'Access-Control-Allow-Credentials': true,
+            // 'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -57,7 +56,7 @@ export async function _sendClick(data) {
         headers: {
             // "Access-Control-Allow-Origin": "http://localhost:3000",
             // 'X-Requested-With': 'XMLHttpRequest',
-            'Access-Control-Allow-Credentials': true,
+            // 'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -66,9 +65,9 @@ export async function _sendClick(data) {
 export async function _getStatistics(){
     return await AxiosInstance.get(`${Serverpath.server}/api/getStatistics`,{
         headers: {
-            // "Access-Control-Allow-Origin": "http://localhost:3000",
+            // "Access-Control-Allow-Origin": "*",
             // 'X-Requested-With': 'XMLHttpRequest',
-            'Access-Control-Allow-Credentials': true,
+            // 'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -78,9 +77,9 @@ export async function _getStatistics(){
 export async function _getGoogleKey(){
     return await AxiosInstance.get(`${Serverpath.server}/api/googleKey`,{
         headers: {
-            // "Access-Control-Allow-Origin": "http://localhost:3000",
+            // "Access-Control-Allow-Origin": "*",
             // 'X-Requested-With': 'XMLHttpRequest',
-            'Access-Control-Allow-Credentials': true,
+            // 'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -92,7 +91,7 @@ export async function _setVisitorName(data){
         headers: {
             // "Access-Control-Allow-Origin": "http://localhost:3000",
             // 'X-Requested-With': 'XMLHttpRequest',
-            'Access-Control-Allow-Credentials': true,
+            // 'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -105,7 +104,7 @@ export async function _setAboutMeWorking(data){
         headers: {
             // "Access-Control-Allow-Origin": "http://localhost:3000",
             // 'X-Requested-With': 'XMLHttpRequest',
-            'Access-Control-Allow-Credentials': true,
+            // 'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -117,7 +116,7 @@ export async function _setMyExperience(data){
         headers: {
             // "Access-Control-Allow-Origin": "http://localhost:3000",
             // 'X-Requested-With': 'XMLHttpRequest',
-            'Access-Control-Allow-Credentials': true,
+            // 'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -127,9 +126,9 @@ export async function _setMyExperience(data){
 export async function _getLastUpdates(){
     return await AxiosInstance.get(`${Serverpath.server}/api/getLastUpdates`,{
         headers: {
-            // "Access-Control-Allow-Origin": "http://localhost:3000",
+            // "Access-Control-Allow-Origin": "*",
             // 'X-Requested-With': 'XMLHttpRequest',
-            'Access-Control-Allow-Credentials': true,
+            // 'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,

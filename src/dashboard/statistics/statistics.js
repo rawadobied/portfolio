@@ -32,6 +32,7 @@ const Statistics = (props) => {
                     </div>
                     <div className="detailsContainer justify-content-between">
 
+
                         <GridTable title={'Last Rates'} data={lastRates && lastRates} withCrypt={true}/>
                         {
                             lastUpdates &&

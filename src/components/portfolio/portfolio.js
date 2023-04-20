@@ -67,7 +67,7 @@ const Portfolio = (props) => {
         <section id={'portfolio'}>
             <h5>My Recent Work</h5>
             <h2>Portfolio</h2>
-            <div className={'container portfolioContainer'}>
+            <div className={'container-xxl portfolioContainer'}>
                 <PreviousJobCard title={'Previous Jobs'} data={previousJobs}/>
             </div>
         </section>

@@ -118,6 +118,7 @@ section > h2, section > h5 {
     text-align: center !important;
     color: var(--color-light) !important;
 }
+
 .sectionStyleH2{
     margin-bottom: 3rem !important;
     color: var(--color-primary) !important;
@@ -128,7 +129,6 @@ section > h2, section > h5 {
 }
 
 .line {
-
     width: 80%;
     height: 2px;
     background-color: var(--color-white);
@@ -157,6 +157,8 @@ a:hover {
 
 small {
     color: var(--color-white) !important;
+    letter-spacing: 1px;
+    line-height: 1.2rem;
 }
 
 .btn {
@@ -199,7 +201,7 @@ img {
     text-transform: capitalize;
 }
 .text-gray{
-    color: var(--color-light);
+    color: #fff;
 }
 
 /*_____________________MEDIA QUERIES (MEDIUM DEVICES)__________________________________*/

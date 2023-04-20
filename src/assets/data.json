@@ -6,23 +6,23 @@
       "aboutme": "I'm a full-stack web developer with a passion for creating beautiful and functional websites. I have several years of experience in both front-end and back-end development, and I'm always eager to learn and try new technologies.\n\nMy skills in HTML, CSS, JavaScript,Php and various web frameworks allow me to design and develop websites that are user-friendly and visually appealing. I'm also good in databases, APIs, and server-side programming, which enables me to build complex web applications that meet specific business needs.\n\nI'm a strong communicator. I'm able to work effectively with both technical and non-technical team members to ensure that projects are completed on time and to the highest quality standards.\n\nI'm passionate about helping businesses achieve their goals through cutting-edge technology.",
       "prevExpe": [
         {
-          "title": "Server Side",
-          "subtitle": "3+ years Working"
+          "title": "Web Developer",
+          "subtitle": "2+ years Working"
         },
         {
-          "title": "Server Side",
-          "subtitle": "3+ years Working"
+          "title": "IT Manager",
+          "subtitle": "5+ years Working"
         },
         {
-          "title": "Server Side",
-          "subtitle": "3+ years Working"
+          "title": "IT Support",
+          "subtitle": "4+ years Working"
         }
       ]
     }
   ],
   "myExperienceSection": [
     {
-      "name": "FrontEnd Developer",
+      "name": "FrontEnd",
       "data": [
         {
           "title": "HTML",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "name": "BackEnd Developer",
+      "name": "BackEnd",
       "data": [
         {
           "title": "MySql",
@@ -119,39 +119,66 @@
       "website": ""
     }
   ],
-  "myProjects":[
+  "myProjects": [
     {
       "title": "Sipan Hotel",
-      "details": "A front end static website for hotel I was working as an IT Manager at, \\n' +\n      'it was the first published project of mine ,",
-      "img": "sipan-menu.png",
+      "visited": "almost 17,000 visits last year",
+      "details": "It was required  to design and develop a website for the hotel i was working at. \nAs an IT Manager,I've decided to do it my self This was my  first published project. The website is designed to showcase a hotel's features like amenities and services to potential guests. Other features include the location , prices ,  the differentiation of room types and the contact information  of the hotel. The website depicts engaging digital images that make it a user friendly site. The website overall  was created  to provide a seamless and enjoyable experience  for users that encourages them  to book a stay at the hotel.",
+      "img": "sipan.png",
       "liveView": "https://www.sipanhotels.com",
       "code": "https://github.com/rawadobied/sipan-hotel",
-      "techUsed": ["React js", "Scss", "css", "html"]
+      "techUsed": ["React-js", "Scss", "css", "html"]
     },
     {
       "title": "Golden Mountains",
-      "details": "A front end static website for hotel I was working as an IT Manager at, \\n' +\n      'it was the first published project of mine ,",
-      "img": "sipan.png",
+      "visited": "almost 24,000 visits last year",
+      "visitingImg": "gmVi.jpg",
+      "details": "I was assigned as a freelance developer for a construction company known as  Golden Mountains. The top priority in this project was to execute a web application to provide a seamless and engaging experience for potential clients. Which would  highlight the company's expertise, credibility, and professionalism. The web application was created to provide information regarding the  apartments , location and contact information.  The developing  web application includes  the structure of the buildings and the financial installments. All these features were created in the web application for an effortless user experience.",
+      "img": "golden.png",
       "liveView": "https://goldenmountains.net",
       "code": "https://github.com/rawadobied/golden",
-      "techUsed": ["React", "Scss"]
+      "techUsed": ["React-js","Scss","Html"]
+    },
+    {
+      "title": "Meal Order",
+      "details": "As an IT manager I had many tasks to accomplish when  I  joined Sipan Hotel, \nAs a team member I decided  to contribute to the problem\n that the hotel was facing during Covid Quarantine. The hotel was hosting  employees for two weeks  that were affected by the disease and were sent to isolate before returning to work.  The issue that the hotel was facing was having their staff be in contact with the quaranted guests. I proposed to create an application that allows contactless room service . The proposal was approved and  the web application was created. The application  consists of two main components: the frontend, and the backend, which manages the data and processes the orders. The application was user friendly which allowed the guest to order three meals  a day which included any add ons, allergies and diet restrictions.",
+      "img": "sipan-menu.png",
+      "liveView": "https://sipan.rawad.net",
+      "dashboard":"https://sipan.rawad.net/dashboard",
+      "code": "https://github.com/rawadobied/golden",
+      "techUsed": ["React-js","Laravel","MySQL","Scss","Html"]
     },
     {
       "title": "Sipan Qr Menu",
-      "details": "A front end static website for hotel I was working as an IT Manager at, \\n' +\n      'it was the first published project of mine ,",
+      "details": "A front end static  dslk kldkl skfh aiug huisgh sdufkhg dfsuhg kdsuhkfg sdkhg sdhfgk dhsjkfgh ldksjfgh gfhds gkfh gwebsite for hotel I was working as an IT Manager at, \\n' +\n      'it was the first published project of mine ,",
       "img": "sipan-menu-site.png",
       "liveView": "https://menu.sipanhotels.com",
       "dashboard":"https://menu.sipanhotels.com/dashboard",
       "code": "https://github.com/rawadobied/golden",
       "techUsed": ["React", "Scss"]
+    }
+  ],
+  "visibleComponents": [
+    {
+      "label": "Home",
+      "id": "1",
+      "status": "true"
     },
     {
-      "title": "Golden Mountains",
-      "details": "A front end static website for hotel I was working as an IT Manager at, \\n' +\n      'it was the first published project of mine ,",
-      "img": "golden.png",
-      "liveView": "https://view.goldenmountains.net",
-      "code": "https://github.com/rawadobied/golden",
-      "techUsed": ["React", "Scss"]
+      "label": "Expierence",
+      "id": "2",
+      "status": "true"
+    },
+    {
+      "label":"About Me",
+      "id": "3",
+      "status": "false"
+    },
+    {
+      "label": "Contact Me",
+      "id": "4",
+      "status": "true"
     }
   ]
+
 }

@@ -3,7 +3,7 @@ import React from 'react';
 const TermsPage = (props) => {
     return(
 
-        <div className={'container pt-2 pt-md-5'}>
+        <div className={'container-xxl pt-2 pt-md-5'}>
             <h1>Terms & Conditions</h1>
             {
                 data.map(d=>

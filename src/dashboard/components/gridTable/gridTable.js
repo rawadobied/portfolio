@@ -4,6 +4,8 @@ import {AiFillStar} from 'react-icons/ai'
 import {FaUserCircle} from 'react-icons/fa'
 import {Rating} from "../../../components/helpsExports";
 import {encryptName} from '../../../globalContext/helperFunction'
+import moment from "moment/moment";
+import {tz} from'moment-timezone'
 
 const GridTable = (props) => {
 
@@ -18,6 +20,20 @@ const GridTable = (props) => {
     //     {name: 'firas', rate: 5},
     //     {name: 'firas', rate: 5}
     // ]
+    function checkNames(e) {
+        let n = (props.withCrypt ? e.name.toLowerCase() == 'anonymous' ? 'anonymous' : encryptName(e.name) : e.name) || 'anonymous'
+        return <h6 className={'fw-bolder'} title={n}>{n}</h6>
+    }
+
+    function changClock(e) {
+        if (e) {
+            let utc= moment().utcOffset()
+            let m = moment(e)
+            m.add(utc, "minutes")
+            return moment(m).format('lll')
+        }
+
+    }
 
     return (
         <div className={'experienceWrapper gridTableContainer'}>
@@ -33,17 +49,17 @@ const GridTable = (props) => {
                                     <span className={'h5'}>
                                          <FaUserCircle/>
                                     </span>
-
-                                    {/*<img src="/me.png" alt=""/>*/}
-                                    <h6 className={'fw-bolder'} title={(props.withCrypt ? encryptName(e.name) : e.name) || 'anonymous'}>{(props.withCrypt ? encryptName(e.name) : e.name) || 'anonymous'}</h6>
+                                    {
+                                        checkNames(e)  // for title check return h6
+                                    }
                                 </div>
                             </div>
 
-                                <div className={'col-4'} title={e?.comment}>
-                                    <article>
-                                        {e?.comment || ''}
-                                    </article>
-                                </div>
+                            <div className={'col-4'} title={e?.comment}>
+                                <article>
+                                    {e?.comment || ''}
+                                </article>
+                            </div>
 
                             <div className={'col-4'}>
 
@@ -51,7 +67,9 @@ const GridTable = (props) => {
                                     e?.rate || e?.rate_star ?
                                         <Rating value={e?.rate || parseInt(e?.rate_star)} rate/>
                                         :
-                                        <h6 className={'text-gray'}>{e?.updated_at}</h6>
+                                        <h6 className={'text-gray'}>{changClock(e?.updated_at)}
+
+                                        </h6>
                                 }
                             </div>
                             <div className="line m-1 mx-auto bg-black bg-opacity-25 shadow-sm"></div>

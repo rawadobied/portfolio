@@ -19,29 +19,27 @@ export const DashboardContextProvider = (props) => {
             mounted.current = false
         }
         {
+            if (mounted.current) {
+                _getRates().then(res => {
 
-            mounted.current &&
-            _getRates().then(res => {
-
-                let myRate = JSON.parse(localStorage.getItem('rate')) || null
-                if (myRate) {
-                    let arr = res.data.data
-                    arr.unshift(myRate)
-                    setLastRates(arr)
-                } else {
-                    setLastRates(res.data.data)
-                }
-            }).catch(e => null)
-            _getStatistics().then(res => setStatistics(res.data.data[0])).catch(e => console.log(e))
-            _getLastUpdates().then(res => {
-                res.data.message === 'success' && setLastUpdates(res.data.data)
-                setLoader(false)
-            }).catch(e => console.log)
-                .finally(() => setLoader(false))
-
+                    let myRate = JSON.parse(localStorage.getItem('rate')) || null
+                    if (myRate) {
+                        let arr = res.data.data.filter(e => e.id !== myRate.id)
+                        arr.unshift(myRate)
+                        setLastRates(arr)
+                    } else {
+                        setLastRates(res.data.data)
+                    }
+                }).catch(e => null)
+                _getStatistics().then(res => setStatistics(res.data.data[0])).catch(e => console.log(e))
+                _getLastUpdates().then(res => {
+                    res.data.message === 'success' && setLastUpdates(res.data.data)
+                    setLoader(false)
+                }).catch(e => console.log)
+                    .finally(() => setLoader(false))
+            }
         }
         return () => x()
-
     }, [])
 
     return (

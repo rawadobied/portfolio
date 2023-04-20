@@ -1,24 +1,38 @@
 import './style.scss'
 import {MdOutlineSegment} from 'react-icons/md'
-import {MdUpdate,MdHome,MdOutlineSettings} from 'react-icons/md'
+import {MdUpdate, MdHome, MdOutlineSettings} from 'react-icons/md'
 
 import {NavLink} from "react-router-dom";
 import {useEffect, useRef, useState} from "react";
-import {GetFromContext,urlGet} from "../../../globalContext/helperFunction";
+import {GetFromContext, urlGet} from "../../../globalContext/helperFunction";
 import {LazyLoad} from "../../../components/helpsExports";
 
 const Sidebar = (props) => {
     const {
-        name,
+        name
     } = GetFromContext()
-    const [active, setActive] = useState(true)
+    const [active, setActive] = useState(null)
     const sideBarRef = useRef()
     const {onCollapse, onref} = props
 
+    function updateSize() {
+        if (window.innerWidth < 850) {
+            setActive(false)
+        } else {
+            setActive(true)
+        }
+    }
+
     useEffect(() => {
+        updateSize()
+        window.addEventListener('resize', updateSize)
+
+        return () => window.removeEventListener('resize', updateSize)
+    }, [])
+    useEffect(()=>{
         onCollapse(active)
         onref(sideBarRef)
-    }, [active])
+    },[active])
 
     return (
         <section className={`navbarContainer ${active ? '' : 'open'}`} ref={sideBarRef}>
@@ -37,7 +51,6 @@ const Sidebar = (props) => {
                         <NavLink className={'navLink d-flex'} to={'/dashboard/home'}>
                             <div className={'col-6'}>
                                 <h3><MdHome/></h3>
-
                             </div>
                             <div className={'col-6 text-start'}>
                                 <h4>Home</h4>
@@ -48,7 +61,6 @@ const Sidebar = (props) => {
                         <NavLink className={'navLink d-flex'} to={'/dashboard/update'}>
                             <div className={'col-6'}>
                                 <h3><MdUpdate/></h3>
-
                             </div>
                             <div className={'col-6 text-start'}>
                                 <h4>Portfolio</h4>

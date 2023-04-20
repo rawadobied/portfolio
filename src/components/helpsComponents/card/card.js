@@ -1,7 +1,6 @@
 import './style.scss';
 import {FaAward} from 'react-icons/fa'
 // import {RiMessengerLine} from 'react-icons/ri'
-import {useNavigate} from 'react-router-dom';
 
 
 const Card = (props) => {

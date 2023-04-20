@@ -43,14 +43,16 @@ const About = (props) => {
         <section id={'about'} data-section={'experience'}>
             <h5>Get To Know</h5>
             <h2>About Me</h2>
-            <div className={'container aboutContainer'}>
+            <div className={'container-xxl aboutContainer'}>
                 <div className={'aboutMe'}>
-                    <div className=" aboutImg">
+                    <div className="aboutImg">
                         {/*<LazyLoad src={urlGet()[0] ||  'me-about.jpg'} file={urlGet()[1]}/>*/}
                         <img src={l} alt=""/>
+                        {/*<video src={l} muted autoPlay con/>*/}
                     </div>
                 </div>
                 <div className="aboutContent">
+                    <h2>I would like to join your team!</h2>
                     <p>
                         {aboutMe &&  Array.from(aboutMe?.split('\n').map(
                             (s,index)=><span className={'m-2 d-block'} key={index}>{s}</span>

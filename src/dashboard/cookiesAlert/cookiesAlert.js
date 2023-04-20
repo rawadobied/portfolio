@@ -4,7 +4,7 @@ const CookiesAlert = (props) => {
         return (
             <div className={'vw-100 position-fixed bottom-0 vh-100 bg-opacity-50 bg-dark'} style={{zIndex: 1500}}>
                 <div className={'w-100 position-absolute bottom-0 bg-warning p-3 p-md-5 animateUp'}>
-                    <div className="container text-center">
+                    <div className="container-xxl text-center">
                         <div className="col-12 d-flex flex-column">
                             <small>
 

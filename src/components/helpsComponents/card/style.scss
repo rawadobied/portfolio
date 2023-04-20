@@ -1,10 +1,11 @@
 .cardContent {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  min-width: 200px;
+  max-width: 250px;
   //min-width: ;
   //max-width: 300px;
-  padding:1.5rem;
+  padding: 1.5rem;
   //flex: 0 0 33.333%;
   border: 1px solid transparent;
   border-radius: 1rem;
@@ -14,6 +15,7 @@
   user-select: none;
   align-self: normal;
   overflow: hidden;
+
   small {
     font-size: 0.7rem;
     //color: var(--color-light);
@@ -31,7 +33,8 @@
   color: var(--color-primary);
   //margin-bottom: 1rem;
 }
-.email{
+
+.email {
   text-overflow: ellipsis !important;
   overflow: hidden;
   max-width: 100%;

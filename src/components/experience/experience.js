@@ -5,13 +5,12 @@ import {GetFromContext} from "../../globalContext/helperFunction";
 const Experience = (props) => {
 
     const {myExperience}=GetFromContext()
-    // const frontend=['HTML','CSS','JavaScript','Bootstrap','React','TypeScript']
-    // const backend=['Laravel','MySql','Kali Linux']
+
     return(
-        <section id={''}>
+        <section>
             <h5>Skills I Have</h5>
             <h2>My Experience</h2>
-            <div className="container experienceContainer">
+            <div className="container-xxl experienceContainer">
 
                 {
                     myExperience && myExperience?.map((e,index)=>

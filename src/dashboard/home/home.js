@@ -2,7 +2,7 @@ import {Sidebar} from '../dashbordExports'
 import './style.scss'
 import React, {useEffect, useState} from "react";
 import {Outlet} from "react-router-dom";
-// import {Helmet} from "react-helmet-async";
+import {Helmet} from "react-helmet";
 import Seo from '../../seo'
 
 
@@ -13,14 +13,6 @@ const Home = (props) => {
     }, [inActive])
     return (
         <Seo>
-            {/*<Helmet>*/}
-            {/*    <meta property="og:site_name" content="Rawad Obied Portfolio"/>*/}
-            {/*    <meta property="og:title" content="dashboard"/>*/}
-            {/*    <meta property="og:image" itemprop="image" content="https://rawad.net/me.png"/>*/}
-            {/*    <meta property="og:image:width" content="80"/>*/}
-            {/*    <meta property="og:image:height" content="110"/>*/}
-            {/*    <title>Rawad Dashboard</title>*/}
-            {/*</Helmet>*/}
             <div className={'dashboardWrapper'}>
                 <div className="sideBarWrapper">
                     <Sidebar onref={(r) => setWidth(r?.current?.clientWidth)} onCollapse={(inActive) => {
@@ -32,6 +24,7 @@ const Home = (props) => {
                 >
                     <div className="appContainer">
                         <Outlet/>
+                        <a href="https://rawad.net" className={'m-auto d-block text-center'}>back to portfolio</a>
                     </div>
                 </div>
 

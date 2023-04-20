@@ -63,7 +63,7 @@ const Services = (props) => {
         <section id={'services'}>
             <h5>What I Offer</h5>
             <h2>Services</h2>
-            <div className={'container servicesContainer'}>
+            <div className={'container-xxl servicesContainer'}>
                 <PreviousJobCard title={'Previous Jobs'} data={data}/>
             </div>
         </section>

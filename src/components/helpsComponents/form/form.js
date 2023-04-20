@@ -67,15 +67,16 @@ const Form = (props) => {
                             value={info?.message || ''}
                             required onChange={(e) => pushInfo(e.target.value, 'message')}/>
                 {
-                    browser?.includes('chrome') &&
-                    message ?
-                        <h4 className={message && message.toLowerCase().includes('successfully') ? `text-success` : ''}>{message}</h4> :
-                        googleKey &&
+                    browser?.includes('chrome') || googleKey &&
                         <ReCAPTCHA sitekey={googleKey && googleKey || ''}
                                    onChange={() =>
                                        setIsTrusted(true)
                                    }/>
 
+                }
+
+                {message &&
+                <h4 className={message && message.toLowerCase().includes('successfully') ? `text-success` : ''}>{message}</h4>
                 }
                 <button type={"submit"} className={'btn btn-primary'}
                         disabled={!isTrusted}

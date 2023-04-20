@@ -30,6 +30,7 @@ export const MyGlobalContext = (props) => {
     const [loader, setLoader] = useState(false)
     const [rateContext, setRateContext] = useState(null)
     const [cookies, setCookiesAccept] = useState(true)
+    const [visibleComponents, setContextVisibleComponents] = useState(data.visibleComponents)
     // const [showWorkExperience, setShowWorkExperience] = useState(false)
     const [refresh, setRefresh] = useState(1)
     const [browser, setBrowser] = useState(null)
@@ -84,6 +85,28 @@ export const MyGlobalContext = (props) => {
 
     }, [])
 
+    const setVisibleComponents = async (e) => {
+        let d = await localStorage.getItem('visible_components') || null
+        if (d == null) {
+            let f = []
+            f.push(e)
+            localStorage.setItem('visible_components', JSON.stringify(f))
+        } else {
+            let f = await JSON.parse(d)
+            let exist = f?.findIndex(x => x.id == e.id)
+            if (exist >= 0) {
+                let updated = {...f[exist], status: !f[exist].status}
+                f.splice(exist, 1, updated)
+                localStorage.setItem('visible_components', JSON.stringify(f))
+            } else {
+                f.push(e)
+                localStorage.setItem('visible_components', JSON.stringify(f))
+            }
+        }
+
+
+    }
+
     const setNameContext = (v) => {
         localStorage.setItem('name', JSON.stringify(v))
         setName(v.rawad)
@@ -93,18 +116,22 @@ export const MyGlobalContext = (props) => {
             return
         })
     }
-    const setRateToContext = (v) => {
+    const setRateToContext = async (v) => {
         setLoader(true)
         setRateContext(v)
         _sendClick({type: 'rate'})
         let formData = new FormData();
-        localStorage.setItem('rate', JSON.stringify(v))
         formData.append('name', v?.name || 'anonymous')
         formData.append('rate', v?.rate || '1')
         formData.append('comment', v?.comment || '')
-        _setRate(formData).then(res => {
-
-            setLoader(false)
+        _setRate(formData).then(async res => {
+            try {
+                let n = await Object.assign(v, {id: res.data?.id})
+                localStorage.setItem('rate', JSON.stringify(n))
+                setLoader(false)
+            } catch (e) {
+                setLoader(false)
+            }
         }).catch(e => {
             setLoader(false)
             return
@@ -112,7 +139,6 @@ export const MyGlobalContext = (props) => {
     }
     const setAboutMeToStorage = (v) => {
         setMyExperience(v)
-        console.log(v)
         localStorage.setItem('aboutmeworking', JSON.stringify(v))
         _setAboutMeWorking(v).then(r => {
             return
@@ -142,7 +168,9 @@ export const MyGlobalContext = (props) => {
             refresh,
             setCookiesAccept,
             cookies,
-            browser
+            browser,
+            setVisibleComponents,
+            visibleComponents
         }}>
             {props.children}
         </GlobalContext.Provider>
