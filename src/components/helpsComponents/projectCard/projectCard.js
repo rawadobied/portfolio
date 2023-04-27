@@ -11,19 +11,19 @@ const ProjectCard = (props) => {
     const data = props?.data
     const {browser} = GetFromContext()
     return (
-        <div className="col-12 col-md-5 m-1 border-danger border-2 shadow-lg">
+        <div className="col-12 col-md-6 border-danger border-2 shadow-lg">
             <div className="imagContainer">
                 <LazyLoad src={data?.img}/>
             </div>
             <div className="projectCardContent">
-                <h5>{data?.title}</h5>
+                <h5 className={'main-text-color fw-bold'}>{data?.title}</h5>
                 {
                     data?.visited &&
-                    <div className={'w-100 d-flex gap-1'}>
-                        <h6 className={'fst-italic my-1'}>{data?.visited}</h6><a href={`/${data?.visitingImg}`}>click her</a>
+                    <div className={'w-100 d-flex gap-1 m-1'}>
+                        <h6 className={'text-decoration-underline my-1'}>{data?.visited}</h6><a href={`/${data?.visitingImg}`}>click her</a>
                     </div>
                 }
-                <small className={'font-italic --color-bg text-light content'} id={data.title}>{data.details}</small>
+                <small className={'secondary-text-color content px-2 mt-1'} id={data.title}>{data.details}</small>
                 <input type={'checkbox'} className={'expand-button'}
                        onClick={async (e) => {
                            if (browser.toLowerCase()!=='chrome'){

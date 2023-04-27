@@ -16,7 +16,7 @@ const ExperienceCard = (props) => {
                                 <BsPatchCheckFill className={'bg-transparent'}/>
                                 <h5>{d?.title}</h5>
                             </div>
-                            <small className={'text-light'}>{d.level}</small>
+                            <small className={'secondary-text-color'}>{d.level}</small>
                             {/*<small className={'text-light'}><Chart percentage={d.level} title={d.level}/></small>*/}
                         </article>
                     )

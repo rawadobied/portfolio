@@ -1,12 +1,10 @@
 import './style.scss'
 import {MdOutlineSegment} from 'react-icons/md'
 import {MdUpdate, MdHome, MdOutlineSettings} from 'react-icons/md'
-
 import {NavLink} from "react-router-dom";
 import {useEffect, useRef, useState} from "react";
-import {GetFromContext, urlGet} from "../../../globalContext/helperFunction";
-import {LazyLoad} from "../../../components/helpsExports";
-
+import {GetFromContext} from "../../../globalContext/helperFunction";
+import {ProfileImg} from "../../dashbordExports"
 const Sidebar = (props) => {
     const {
         name
@@ -29,36 +27,35 @@ const Sidebar = (props) => {
 
         return () => window.removeEventListener('resize', updateSize)
     }, [])
-    useEffect(()=>{
+    useEffect(() => {
         onCollapse(active)
         onref(sideBarRef)
-    },[active])
+    }, [active])
 
     return (
         <section className={`navbarContainer ${active ? '' : 'open'}`} ref={sideBarRef}>
             <h3>{name + "'s" || 'Rawad\'s'}</h3>
-            <div className={'imgContainer'}>
-                <LazyLoad src={urlGet() || 'me-about.jpg'} file={urlGet() ? true : false} alt={'Rawad\'s image'}/>
-                {/*<img src={urlGet() || Me} alt="Me"/>*/}
-            </div>
+            <ProfileImg/>
             <h2>Dashboard</h2>
             <div className="menuToggle">
                 <MdOutlineSegment onClick={() => setActive(!active)}/>
             </div>
             <div className="listContainer">
-                <ul className={'navList'}>
-                    <li className={'navItem'}>
-                        <NavLink className={'navLink d-flex'} to={'/dashboard/home'}>
+                <ul className={'navList '}>
+                    <li className={'navItem '}>
+                        <NavLink className={'navLink d-flex  text-decoration-none'}
+                                 isActive={true}
+                                 to={'/dashboard/home'}>
                             <div className={'col-6'}>
                                 <h3><MdHome/></h3>
                             </div>
-                            <div className={'col-6 text-start'}>
+                            <div className={'col-6 text-start '}>
                                 <h4>Home</h4>
                             </div>
                         </NavLink>
                     </li>
                     <li className={'navItem'}>
-                        <NavLink className={'navLink d-flex'} to={'/dashboard/update'}>
+                        <NavLink className={'navLink d-flex text-decoration-none'} to={'/dashboard/update'}>
                             <div className={'col-6'}>
                                 <h3><MdUpdate/></h3>
                             </div>
@@ -68,7 +65,7 @@ const Sidebar = (props) => {
                         </NavLink>
                     </li>
                     <li className={'navItem'}>
-                        <NavLink className={'navLink d-flex'} to={'/dashboard/setting'}>
+                        <NavLink className={'navLink d-flex text-decoration-none'} to={'/dashboard/setting'}>
                             <div className={'col-6'}>
                                 <h3><MdOutlineSettings/></h3>
                             </div>

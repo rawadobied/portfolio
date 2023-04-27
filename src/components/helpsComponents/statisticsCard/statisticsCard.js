@@ -4,13 +4,13 @@ import {BiBarChart} from 'react-icons/bi'
 
 const StatisticsCard = (props) => {
     return (
-        <div className={'statisticsCard'}>
+        <div className={'position-relative'}>
             <span className={'spotLight'}></span>
             <div className={'cardWrapper'}>
                 <div className="cardContent">
                     <h1 className={'icon'}><BiBarChart/></h1>
                     <div className="cardHeader">
-                        <small>{props.title}</small>
+                        <small className={'main-text-color'}>{props.title}</small>
                         <h2 className={'subTitle'}>{props.amount}</h2>
                     </div>
                     {

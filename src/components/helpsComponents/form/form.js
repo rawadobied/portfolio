@@ -69,6 +69,7 @@ const Form = (props) => {
                 {
                     browser?.includes('chrome') || googleKey &&
                         <ReCAPTCHA sitekey={googleKey && googleKey || ''}
+                                   onExpired={()=>setIsTrusted(false)}
                                    onChange={() =>
                                        setIsTrusted(true)
                                    }/>

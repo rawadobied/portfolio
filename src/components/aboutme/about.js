@@ -2,7 +2,7 @@ import './style.scss'
 import {Card} from "../helpsExports";
 import {GetFromContext} from "../../globalContext/helperFunction";
 import {useEffect, useRef} from "react";
-import l from '../../assets/giphy.gif'
+import l from '../../assets/programming.svg'
 const About = (props) => {
     const scrollSideBar = useRef()
     const {aboutMe, aboutMeWorking} = GetFromContext()
@@ -41,19 +41,17 @@ const About = (props) => {
     }, [])
     return (
         <section id={'about'} data-section={'experience'}>
-            <h5>Get To Know</h5>
-            <h2>About Me</h2>
-            <div className={'container-xxl aboutContainer'}>
-                <div className={'aboutMe'}>
-                    <div className="aboutImg">
+            <h5 className={'secondary-text-color'}>Get To Know</h5>
+            <h2 className={'main-text-color'}>About Me</h2>
+            <div className={'container-xxl d-flex flex-wrap align-items-center'}>
+                <div className={'col-12 col-md-5'} style={{minWidth:'200px'}}>
                         {/*<LazyLoad src={urlGet()[0] ||  'me-about.jpg'} file={urlGet()[1]}/>*/}
-                        <img src={l} alt=""/>
+                        <img src={l} alt="" className={'img-fluid w-100'}/>
                         {/*<video src={l} muted autoPlay con/>*/}
-                    </div>
                 </div>
-                <div className="aboutContent">
-                    <h2>I would like to join your team!</h2>
-                    <p>
+                <div className="aboutContent col-12 col-md-7">
+                    <h2 className={'main-text-color typing-animation position-relative overflow-hidden'}>I would like to join your team!</h2>
+                    <p className={'secondary-text-color'}>
                         {aboutMe &&  Array.from(aboutMe?.split('\n').map(
                             (s,index)=><span className={'m-2 d-block'} key={index}>{s}</span>
                         ))}

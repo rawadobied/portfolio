@@ -11,7 +11,7 @@ export async function _setVisitor(id,device) {
         headers: {
             // "Access-Control-Allow-Origin": "http://localhost:3000",
             // 'X-Requested-With': 'XMLHttpRequest',
-            // 'Access-Control-Allow-Credentials': true,
+            'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -22,7 +22,7 @@ export async function _setRate(data) {
         headers: {
             // "Access-Control-Allow-Origin": "http://localhost:3000",
             // 'X-Requested-With': 'XMLHttpRequest',
-            // 'Access-Control-Allow-Credentials': true,
+            'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -34,7 +34,7 @@ export async function _getRates(data) {
         headers: {
             // "Access-Control-Allow-Origin": "*",
             // 'X-Requested-With': 'XMLHttpRequest',
-            // 'Access-Control-Allow-Credentials': true,
+            'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -45,7 +45,7 @@ export async function _sendMessage(data) {
         headers: {
             // "Access-Control-Allow-Origin": "http://localhost:3000",
             // 'X-Requested-With': 'XMLHttpRequest',
-            // 'Access-Control-Allow-Credentials': true,
+            'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -56,7 +56,7 @@ export async function _sendClick(data) {
         headers: {
             // "Access-Control-Allow-Origin": "http://localhost:3000",
             // 'X-Requested-With': 'XMLHttpRequest',
-            // 'Access-Control-Allow-Credentials': true,
+            'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -67,7 +67,7 @@ export async function _getStatistics(){
         headers: {
             // "Access-Control-Allow-Origin": "*",
             // 'X-Requested-With': 'XMLHttpRequest',
-            // 'Access-Control-Allow-Credentials': true,
+            'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -79,7 +79,7 @@ export async function _getGoogleKey(){
         headers: {
             // "Access-Control-Allow-Origin": "*",
             // 'X-Requested-With': 'XMLHttpRequest',
-            // 'Access-Control-Allow-Credentials': true,
+            'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -91,7 +91,7 @@ export async function _setVisitorName(data){
         headers: {
             // "Access-Control-Allow-Origin": "http://localhost:3000",
             // 'X-Requested-With': 'XMLHttpRequest',
-            // 'Access-Control-Allow-Credentials': true,
+            'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -104,7 +104,7 @@ export async function _setAboutMeWorking(data){
         headers: {
             // "Access-Control-Allow-Origin": "http://localhost:3000",
             // 'X-Requested-With': 'XMLHttpRequest',
-            // 'Access-Control-Allow-Credentials': true,
+            'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -116,7 +116,7 @@ export async function _setMyExperience(data){
         headers: {
             // "Access-Control-Allow-Origin": "http://localhost:3000",
             // 'X-Requested-With': 'XMLHttpRequest',
-            // 'Access-Control-Allow-Credentials': true,
+            'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,
@@ -128,7 +128,7 @@ export async function _getLastUpdates(){
         headers: {
             // "Access-Control-Allow-Origin": "*",
             // 'X-Requested-With': 'XMLHttpRequest',
-            // 'Access-Control-Allow-Credentials': true,
+            'Access-Control-Allow-Credentials': true,
             'Content-Type': 'multipart/form-data'
         },
         withCredentials: true,

@@ -6,9 +6,9 @@ import data from '../../assets/data.json'
 const Projects = (props) => {
     return (
         <section id={'projects'}>
-            <h5>Projects</h5>
-            <h2>Previous Projects</h2>
-            <div className="container-xxl d-flex flex-wrap justify-content-md-between">
+            <h5 className={'secondary-text-color'}>Projects</h5>
+            <h2 className={'main-text-color'}>Previous Projects</h2>
+            <div className="container-xxl d-flex flex-wrap">
                 {
                     data.myProjects?.map((e, index) =>
                         <ProjectCard data={e} key={index}/>

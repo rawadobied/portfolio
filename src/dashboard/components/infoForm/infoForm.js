@@ -17,10 +17,9 @@ const InfoForm = (props) => {
     } = GetFromContext()
     const [info, setInfo] = useState(null)
     // const [jobExperience, setJobExperience] = useState([{title: 'Servers', years: '3+'}, {title: 'Kali', years: '3+'}])
-    const [file, setFile] = useState(null)
+
     const [disabled, setDisabled] = useState(true)
     const [refresh, setRefresh] = useState(0)
-    const fileInputRef = useRef()
     const formData = useRef()
 
     const pushInfo = (val, text) => {
@@ -31,7 +30,7 @@ const InfoForm = (props) => {
         e.preventDefault()
         setDisabled(true)
         setLoader(true)
-        file && imageUpload(file)
+        // file && imageUpload(file)
         setTimeout(() => {
             formData.current.reset()
             setDisabled(false)
@@ -44,27 +43,7 @@ const InfoForm = (props) => {
 
         // setDisabled(false)
     }
-    const getBase64 = (file) => {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onload = () => resolve(reader.result);
-            reader.onerror = error => reject(error);
-            reader.readAsDataURL(file);
-        });
-    }
-    const imageUpload = (e) => {
-        const file = e.target.files[0];
-        if (["image/png"].includes(file?.type)) {
-            getBase64(file).then(base64 => {
-                localStorage["fileBase64"] = base64;
-            });
-        } else {
 
-            fileInputRef.current.value = null
-            alert('image only png')
-
-        }
-    };
 
     const handleJobChange = e => {
         let items = [...aboutMeWorking]
@@ -105,12 +84,12 @@ const InfoForm = (props) => {
                                          inputProps={{maxLength: 20}} required/>
                         </div>
                         <div className="infoFormItem">
-                            <MyTextField id={'file'} label={'Image'}
-                                         placeholder={'subtitle'} focused
-                                         onChange={(e) => setFile(e)}
-                                         type={'file'} inputProps={{accept: "image/png"}} inputRef={fileInputRef}
+                            {/*<MyTextField id={'file'} label={'Image'}*/}
+                            {/*             placeholder={'subtitle'} focused*/}
+                            {/*             onChange={(e) => setFile(e)}*/}
+                            {/*             type={'file'} inputProps={{accept: "image/png"}} inputRef={fileInputRef}*/}
 
-                            />
+                            {/*/>*/}
                         </div>
                         <div className={'infoFormContainer col-12'}>
                             <h2>Update About Me Page Information</h2>

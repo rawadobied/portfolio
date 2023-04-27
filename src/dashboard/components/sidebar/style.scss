@@ -1,6 +1,6 @@
 .navbarContainer {
   //width: max-content;
-  min-width:300px;
+  min-width: 300px;
   //display: flex;
   position: fixed;
   height: 100vh;
@@ -28,12 +28,20 @@
   border-radius: 50%;
   overflow: hidden;
   background-color: #1f1f38;
+  position: relative;
+
 
   img {
     width: 100%;
     object-fit: cover;
     object-position: top;
   }
+}
+
+.camera {
+  position: absolute;
+  bottom: 0;
+  font-size: 2rem;
 }
 
 .menuToggle {
@@ -66,7 +74,8 @@
     position: relative;
     color: white;
   }
-  .active:after{
+
+  .active:after {
     content: '';
     width: 5px;
     height: 100%;

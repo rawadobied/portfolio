@@ -3,12 +3,14 @@ import React, {useEffect, useRef, useState} from 'react';
 // import "bootstrap/js/dist/collapse"
 import './style.scss'
 import {AiOutlineHome, AiOutlineUser,} from 'react-icons/ai'
+import {BiCopyAlt} from 'react-icons/bi'
 import {BiBook} from 'react-icons/bi'
 import {RiServiceFill} from 'react-icons/ri'
 import {_sendClick} from "../../globalContext/serverConfig/axiosApi";
 
 const Navbar = (props) => {
         const [activeNave, setActiveNav] = useState('home')
+        const [showMsg, setShowMsg] = useState('none')
         const navRef = useRef()
         // useEffect(()=>{
         //     console.log(activeNave)
@@ -30,6 +32,12 @@ const Navbar = (props) => {
         useEffect(() => {
 
         }, [activeNave])
+    function _showMsg(){
+            setShowMsg('block')
+        setTimeout(()=>{
+            setShowMsg('none')
+        },2000)
+    }
 
         return (
             <nav className="" ref={navRef}>
@@ -49,6 +57,18 @@ const Navbar = (props) => {
                    className={activeNave === 'contacts' ? 'active' : ''}
                    onClick={()=> _sendClick({type:'contacts'})}
                 ><RiServiceFill/></a>
+                <a title={'Share URL'} name={'contacts'}
+                   className={'c-pointer'}
+                   onClick={()=> {
+                       navigator.clipboard.writeText('https://www.rawad.net')
+                       _showMsg()
+                   }}
+                ><BiCopyAlt/>
+                    <span
+                        style={{marginLeft:'-2rem',display:showMsg}}
+                        className={'position-absolute top-0 text-gray w-50'}>URL Copied</span>
+                </a>
+
             </nav>
         )
     }

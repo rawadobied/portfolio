@@ -28,8 +28,8 @@ const Contacts = (props) => {
     ]
     return (
         <section id={'contacts'} data-section={'contacts'}>
-            <h5>Get In Touch</h5>
-            <h2>Contact Me</h2>
+            <h5 className={'secondary-text-color'}>Get In Touch</h5>
+            <h2 className={'main-text-color'}>Contact Me</h2>
             <div className="container-xxl">
                 <div className="d-flex flex-wrap flex-lg-nowrap gap-2">
                     <div className="col-12 col-lg-3 col-md-3 d-flex gap-2 overflow-scroll flex-sm-nowrap flex-md-wrap">

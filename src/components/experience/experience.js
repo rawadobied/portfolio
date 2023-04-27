@@ -8,8 +8,8 @@ const Experience = (props) => {
 
     return(
         <section>
-            <h5>Skills I Have</h5>
-            <h2>My Experience</h2>
+            <h5 className={'secondary-text-color'}>Skills I Have</h5>
+            <h2 className={'main-text-color'}>My Experience</h2>
             <div className="container-xxl experienceContainer">
 
                 {

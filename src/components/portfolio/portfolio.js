@@ -65,8 +65,8 @@ const Portfolio = (props) => {
     ]
     return(
         <section id={'portfolio'}>
-            <h5>My Recent Work</h5>
-            <h2>Portfolio</h2>
+            <h5 className={'secondary-text-color'}>My Recent Work</h5>
+            <h2 className={'main-text-color'}>Resume</h2>
             <div className={'container-xxl portfolioContainer'}>
                 <PreviousJobCard title={'Previous Jobs'} data={previousJobs}/>
             </div>

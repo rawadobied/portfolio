@@ -3,11 +3,11 @@
   "subtitle": "Full Stack Web Developer",
   "aboutMeSection": [
     {
-      "aboutme": "I'm a full-stack web developer with a passion for creating beautiful and functional websites. I have several years of experience in both front-end and back-end development, and I'm always eager to learn and try new technologies.\n\nMy skills in HTML, CSS, JavaScript,Php and various web frameworks allow me to design and develop websites that are user-friendly and visually appealing. I'm also good in databases, APIs, and server-side programming, which enables me to build complex web applications that meet specific business needs.\n\nI'm a strong communicator. I'm able to work effectively with both technical and non-technical team members to ensure that projects are completed on time and to the highest quality standards.\n\nI'm passionate about helping businesses achieve their goals through cutting-edge technology.",
+      "aboutme": "I'm a full-stack web developer with a passion for creating beautiful and functional websites. I have several years of experience in both front-end and back-end development, and I'm always eager to learn and try new technologies.\n\nMy skills in HTML , CSS , JavaScript , Php and various web frameworks allow me to design and develop websites that are user-friendly and visually appealing. I'm also good in databases, APIs, and server-side programming, which enables me to build complex web applications that meet specific business needs.\n\nI'm a strong communicator. I'm able to work effectively with both technical and non-technical team members to ensure that projects are completed on time and to the highest quality standards.\n\nI'm passionate about helping businesses achieve their goals through cutting-edge technology.",
       "prevExpe": [
         {
           "title": "Web Developer",
-          "subtitle": "2+ years Working"
+          "subtitle": "3+ years Working"
         },
         {
           "title": "IT Manager",
@@ -26,27 +26,27 @@
       "data": [
         {
           "title": "HTML",
-          "level": "comfortable"
+          "level": "proficient"
         },
         {
           "title": "CSS",
-          "level": "comfortable"
+          "level": "proficient"
         },
         {
           "title": "JavaScript",
-          "level": "comfortable"
+          "level": "proficient"
         },
         {
           "title": "Bootstrap",
-          "level": "comfortable"
+          "level": "upper-intermediate"
         },
         {
           "title": "React",
-          "level": "comfortable"
+          "level": "advanced"
         },
         {
           "title": "TypeScript",
-          "level": "comfortable"
+          "level": "advanced"
         }
       ]
     },
@@ -63,7 +63,7 @@
         },
         {
           "title": "Laravel",
-          "level": "comfortable"
+          "level": "upper-intermediate"
         }
       ]
     }
@@ -73,35 +73,21 @@
       "jobPosition": "FullStuck Web Developer",
       "workPlace": "Freelancer",
       "country": "Iraq-Erbil",
-      "period": "April 2021 - April 2022",
-      "website": ""
-    },
-    {
-      "jobPosition": "IT Manager",
-      "workPlace": "Best Western Plus Erbil Hotel",
-      "country": "Iraq-Erbil",
-      "period": "March 2018 - April 2021",
-      "website": ""
-    },
-    {
-      "jobPosition": "Team leader",
-      "workPlace": "UNICEF",
-      "country": "Lebanon",
-      "period": "January 2018 - June 2018",
-      "website": ""
-    },
-    {
-      "jobPosition": "Technical Support",
-      "workPlace": "Real Word For Technology",
-      "country": "Iraq-Erbil",
-      "period": "April 2021 - April 2022",
+      "period": "April 2019 - Present",
       "website": ""
     },
     {
       "jobPosition": "IT Manager",
       "workPlace": "Sipan Hotel",
       "country": "Iraq-Erbil",
-      "period": "April 2021 - April 2022",
+      "period": "March 2020 - April 2022",
+      "website": "www.sipanhotels.com"
+    },
+    {
+      "jobPosition": "IT Manager",
+      "workPlace": "Best Western Plus Erbil Hotel",
+      "country": "Iraq-Erbil",
+      "period": "March 2018 - April 2020",
       "website": ""
     },
     {
@@ -112,10 +98,24 @@
       "website": ""
     },
     {
+      "jobPosition": "Team leader",
+      "workPlace": "UNICEF",
+      "country": "Lebanon",
+      "period": "January 2018 - June 2018",
+      "website": ""
+    },
+    {
       "jobPosition": "IT Manager",
       "workPlace": "Sheraton Ma'aret Sednaya Hotel",
-      "country": "Damascus",
+      "country": "Damascus-Syria",
       "period": "January 2015 - May 2017",
+      "website": ""
+    },
+    {
+      "jobPosition": "Technical Support",
+      "workPlace": "Real Word For Technology",
+      "country": "Damascus-Syria",
+      "period": "April 2021 - April 2022",
       "website": ""
     }
   ],
@@ -150,7 +150,7 @@
     },
     {
       "title": "Sipan Qr Menu",
-      "details": "A front end static  dslk kldkl skfh aiug huisgh sdufkhg dfsuhg kdsuhkfg sdkhg sdhfgk dhsjkfgh ldksjfgh gfhds gkfh gwebsite for hotel I was working as an IT Manager at, \\n' +\n      'it was the first published project of mine ,",
+      "details": "allows users to browse through the food items offered by the restaurant.  along with their prices, descriptions, and images.\nThe user interface of the web application is designed to be user-friendly and visually appealing, with high-quality images and intuitive navigation.\nThe web application allows owners edit and modify images , prices , description for any items and by one click.",
       "img": "sipan-menu-site.png",
       "liveView": "https://menu.sipanhotels.com",
       "dashboard":"https://menu.sipanhotels.com/dashboard",

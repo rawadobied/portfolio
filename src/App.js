@@ -68,8 +68,8 @@ function App() {
                                     <Projects/>
                                     <div className={'col-12 text-center mt-5'}>
                                         <div className={''}>
-                                            <h5 className={'sectionStyleH5'}>want to see!</h5>
-                                            <h2 className={'sectionStyleH2'}>enter my name!</h2>
+                                            <h5 className={'sectionStyleH5 secondary-text-color'}>my resume!</h5>
+                                            <h2 className={'sectionStyleH2 main-text-color'}>enter my name!</h2>
                                             <h1 className={'m-0 finger-down sectionStyleH5'}><TbHandFinger/></h1>
                                             <div className={'d-flex align-items-center justify-content-center gap-1'}>
 

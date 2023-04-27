@@ -17,13 +17,12 @@ const Statistics = (props) => {
                     <div className="headerContainer">
                         <h1>General Statistics</h1>
                     </div>
-                    <div className="detailsContainer">
+                    <div className="detailsContainer align-content-stretch">
                         <StatisticsCard title={'Traffic Inbound'} amount={statistics?.traffic || ''} subtitle={'+10%'}/>
                         <StatisticsCard title={'New Clients'} amount={statistics?.new_clients || ''} subtitle={'+2%'}/>
                         <StatisticsCard title={'Email Sent'} amount={statistics?.emails || ''} subtitle={'+2%'}/>
-                        <StatisticsCard title={'Email Sent'} amount={statistics?.emails || ''} subtitle={'+2%'}/>
-                        <StatisticsCard title={'Average Visit time'} amount={statistics?.rate_submit || ''}
-                                        subtitle={'+2%'}/>
+                        <StatisticsCard title={'Contacted Me'} amount={statistics?.contacted_me || ''} subtitle={'+2%'}/>
+                        <StatisticsCard title={'Reviews'} amount={statistics?.rate_submit || ''} subtitle={'+2%'}/>
                     </div>
                 </div>
                 <div className="StatisticsSection">

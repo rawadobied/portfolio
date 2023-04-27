@@ -1,3 +1,7 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow:order-backend
+Disallow:portfolio-backend
+Disallow:sipan
+Disallow:video
+Disallow:e-comm
